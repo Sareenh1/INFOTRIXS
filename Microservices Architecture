@@ -34,4 +34,8 @@
 7.Configure WordPress Database:
   Create a new MySQL database and user for WordPress.
 
+8.Complete WordPress Setup:
+  Open your browser and go to the WordPress instance's public IP. Follow the WordPress setup instructions.
+  
+
   
