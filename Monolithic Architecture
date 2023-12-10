@@ -1,1 +1,41 @@
+Monolithic Architecture Deployment:
+
+1.Launch an EC2 Instance:
+  AMI: Choose an Ubuntu AMI.
+  Instance Type: t2.micro (or any other suitable type).
+  Security Group: Create a new security group allowing HTTP (port 80) and SSH (port 22) access.
+
+2.Install MySQL:
+  sudo apt update
+  sudo apt install mysql-server
+
+3.Secure MySQL Installation:
+  sudo mysql_secure_installation
+
+4.Install Apache and PHP:
+  sudo apt install apache2 php libapache2-mod-php php-mysql
+
+5.Install WordPress:
+  sudo apt install wordpress
+
+6.Configure Apache for WordPress:
+  sudo nano /etc/apache2/sites-available/000-default.conf
+  Add the following lines inside the <VirtualHost> section:
+    DocumentRoot /usr/share/wordpress
+    <Directory /usr/share/wordpress>
+       Options FollowSymLinks
+       AllowOverride Limit Options FileInfo
+       DirectoryIndex index.php
+       Require all granted
+     </Directory>
+   Enable necessary Apache modules:
+   sudo a2enmod rewrite
+   sudo systemctl restart apache2
+
+7.Configure WordPress Database:
+  Create a new MySQL database and user for WordPress.
+
+8.Complete WordPress Setup:
+  Open your browser and go to the EC2 instance's public IP. Follow the WordPress setup instructions.
+
 
