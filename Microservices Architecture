@@ -7,3 +7,31 @@
 2.Install MySQL on the Database Instance:
   sudo apt update
   sudo apt install mysql-server
+
+3.Secure MySQL Installation:
+  sudo mysql_secure_installation
+
+4.Install Apache and PHP on the WordPress Instance:
+  sudo apt install apache2 php libapache2-mod-php php-mysql
+
+5.Install WordPress on the WordPress Instance:
+  sudo apt install wordpress
+
+6.Configure Apache for WordPress:
+  sudo nano /etc/apache2/sites-available/000-default.conf
+  Add the following lines inside the '<VirtualHost>' section:
+  DocumentRoot /usr/share/wordpress
+  <Directory /usr/share/wordpress>
+      Options FollowSymLinks
+      AllowOverride Limit Options FileInfo
+      DirectoryIndex index.php
+      Require all granted
+  </Directory>
+  Enable necessary Apache modules:
+  sudo a2enmod rewrite
+  sudo systemctl restart apache2
+
+7.Configure WordPress Database:
+  Create a new MySQL database and user for WordPress.
+
+  
