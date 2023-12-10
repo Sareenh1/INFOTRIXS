@@ -2,7 +2,7 @@ Monolithic Architecture Deployment:
 
 1.Launch an EC2 Instance:
   AMI: Choose an Ubuntu AMI.
-  Instance Type: t2.micro (or any other suitable type).
+  Instance Type: t2.micro.
   Security Group: Create a new security group allowing HTTP (port 80) and SSH (port 22) access.
 
 2.Install MySQL:
