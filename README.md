@@ -1,2 +1,2 @@
 # INFOTRIXS
-INFOTRIXS Internship
+Week-1 Task
