@@ -1,1 +1,9 @@
+1.Microservices Architecture Deployment:
+  Launch Two EC2 Instances:
+  AMI: Choose an Ubuntu AMI.
+  Instance Type: t2.micro.
+  Security Group: Create a new security group allowing HTTP (port 80) and SSH (port 22) access.
 
+2.Install MySQL on the Database Instance:
+  sudo apt update
+  sudo apt install mysql-server
